@@ -1,0 +1,33 @@
+// ScoreViewModel.kt
+
+package pam.lat.scoreviewmodel
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+class ScoreViewModel : ViewModel() {
+    // LiveData untuk menyimpan skor Tim A dan Tim B
+    private val _scoreA = MutableLiveData<Int>(0)
+    val scoreA: LiveData<Int>
+        get() = _scoreA
+
+    private val _scoreB = MutableLiveData<Int>(0)
+    val scoreB: LiveData<Int>
+        get() = _scoreB
+
+    // Fungsi untuk menambah skor untuk masing-masing tim
+    fun incrementScoreA() {
+        _scoreA.value = (_scoreA.value ?: 0) + 1
+    }
+
+    fun incrementScoreB() {
+        _scoreB.value = (_scoreB.value ?: 0) + 1
+    }
+
+    // Fungsi untuk reset skor kedua tim
+    fun resetScores() {
+        _scoreA.value = 0
+        _scoreB.value = 0
+    }
+}
