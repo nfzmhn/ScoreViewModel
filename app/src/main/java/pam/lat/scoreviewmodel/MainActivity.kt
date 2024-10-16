@@ -1,4 +1,4 @@
-// MainActivity.kt
+
 package pam.lat.scoreviewmodel
 
 import androidx.appcompat.app.AppCompatActivity
@@ -17,10 +17,8 @@ class  MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Menggunakan Data Binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        // Mengaitkan ViewModel dengan layout
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
     }
